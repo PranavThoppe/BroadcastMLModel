@@ -1,3 +1,11 @@
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel          # <-- this line is missing in your deployed file
+from typing import List, Optional, Dict, Any
+import numpy as np
+import pandas as pd
+import joblib
+import lightgbm as lgb
+
 # --- add flag in request model ---
 class PredictRequest(BaseModel):
     games: List[Game]
